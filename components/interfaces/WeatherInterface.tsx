@@ -1,4 +1,4 @@
-export interface Weather {
+export default interface Weather {
   latitude: number;
   longitude: number;
   generationtime_ms: number;

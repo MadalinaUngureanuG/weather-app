@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap";
-import { Daily, CurrentWeather, Hourly } from "./Interfaces";
 import homeStyles from "../src/styles/Home.module.css";
+import { CurrentWeather, Daily, Hourly } from "./interfaces/WeatherInterface";
 
 interface ComponentProps {
   daily:Daily; 
@@ -29,20 +29,20 @@ export default function TodaysHighlights(props:ComponentProps) {
 
   return (
     <>
-    <Card className={homeStyles.card + " me-3 text-center"}>
-      <Card.Body>
+    <Card className={homeStyles.card + " ms-3 text-center"}>
+      <Card.Body className="d-flex flex-column align-items-center">
         <Card.Title className="fs-6">Sunrise & Sunset</Card.Title>
-        <Card.Body className="width d-flex flex-row p-0 m-0">
-          <Card.Img src="icons/sunrise.svg" alt="sunrise image"/>
-          <Card.Text className="fw-bold mt-3">{getSunriseTime()}</Card.Text>
+        <Card.Body className="d-flex flex-column p-0 m-0 align-items-center">
+          <Card.Img className="width" src="icons/sunrise.svg" alt="sunrise image"/>
+          <Card.Text className="fw-bold">{getSunriseTime()}</Card.Text>
         </Card.Body>
-        <Card.Body className="width d-flex flex-row p-0 m-0">
-          <Card.Img src="icons/sunset.svg" alt="sunset image"/>
-          <Card.Text className="fw-bold d-flex flex-row mt-3">{getSunsetTime()}</Card.Text>
+        <Card.Body className="d-flex flex-column p-0 m-0 align-items-center">
+          <Card.Img className="width" src="icons/sunset.svg" alt="sunset image"/>
+          <Card.Text className="fw-bold">{getSunsetTime()}</Card.Text>
         </Card.Body>
       </Card.Body>
     </Card>
-    <Card className={homeStyles.card + " me-3 text-center"}>
+    <Card className={homeStyles.card + " ms-3 text-center"}>
       <Card.Body>
         <Card.Title className="fs-6">Wind Status</Card.Title>
         <Card.Body className="d-flex flex-row p-0 m-0">
@@ -51,7 +51,7 @@ export default function TodaysHighlights(props:ComponentProps) {
         <Card.Text className="fw-bold fs-5 mt-3">{current_weather.windspeed} km/h</Card.Text>
       </Card.Body>
     </Card>
-    <Card className={homeStyles.card + " me-3 text-center"}>
+    <Card className={homeStyles.card + " ms-3 text-center"}>
       <Card.Body>
         <Card.Title className="fs-6">UV Index</Card.Title>
         <Card.Body className="d-flex flex-row p-0 m-0">
@@ -60,7 +60,7 @@ export default function TodaysHighlights(props:ComponentProps) {
         <Card.Text className="fw-bold fs-5 mt-3">{daily.uv_index_max && daily.uv_index_max.length > 0 ? daily.uv_index_max[0]:""}</Card.Text>
       </Card.Body>
     </Card>
-    <Card className={homeStyles.card + " me-3 text-center"}>
+    <Card className={homeStyles.card + " ms-3 text-center"}>
       <Card.Body>
         <Card.Title className="fs-6">Humidity</Card.Title>
         <Card.Body className="d-flex flex-row p-0 m-0">

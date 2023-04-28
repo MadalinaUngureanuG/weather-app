@@ -23,7 +23,7 @@ export default function WeatherDay(props:ComponentProps) {
 
   return (
     <>
-      <Card className="card text-center me-1">
+      <Card className="card-day text-center ms-3">
       <Card.Body>
       <Card.Title>{getDayName()}</Card.Title>
       <Weathercode weathercode={weathercode} isDayOrNight={is_day} />
