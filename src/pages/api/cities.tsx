@@ -1,8 +1,7 @@
-const getUrl = (name: string = '') => {
-	let url = 'https://api.api-ninjas.com/v1/city';
-	url += '?name=' + name;
-	return url;
-};
+const BASE_URL = 'https://api.api-ninjas.com/v1/city';
+function getUrl(name = '') {
+	return `${BASE_URL}?name=${encodeURIComponent(name)}`;
+}
 
 export default async function handler(req: any, res: any) {
 	const { name } = req.query;
