@@ -101,8 +101,7 @@ export default function Home() {
 
 	function getVisibilityInKm(): number {
 		if (weather.hourly.visibility && weather.hourly.visibility.length > 0) {
-			const visibilityInKm: number = weather.hourly.visibility[0] / 1000;
-			return visibilityInKm;
+			return weather.hourly.visibility[0] / 1000;
 		}
 		return 0;
 	}
